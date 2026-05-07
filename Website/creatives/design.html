@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="view-transition" content="same-origin" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Design · JANICE YOON</title>
+  <link rel="stylesheet" href="../styles.css?v=352" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script>try{if(localStorage.getItem("jy-cursor")==="apple")localStorage.removeItem("jy-cursor");if(localStorage.getItem("jy-cursor")==="moonstone")localStorage.removeItem("jy-cursor");var _jyc=localStorage.getItem("jy-cursor");if(_jyc==="cherry"||localStorage.getItem("jy-cherry-cursor")==="1")document.documentElement.setAttribute("data-cursor","cherry");else if(_jyc==="plumeria"||localStorage.getItem("jy-plumeria-cursor")==="1")document.documentElement.setAttribute("data-cursor","plumeria");else if(_jyc==="bubble"||_jyc==="pearl"||localStorage.getItem("jy-pearl-cursor")==="1")document.documentElement.setAttribute("data-cursor","bubble");else if(_jyc==="sakura")document.documentElement.setAttribute("data-cursor","sakura");}catch(e){}</script>
+  <script src="../site-cursor-toggle.js?v=12" defer></script>
+  <script src="../site-home-corner.js?v=2" defer></script>
+  <script src="../site-cd-center.js?v=46" defer></script>
+  <script src="../site-undo.js?v=2" defer></script>
+  <script src="../home-bubble-drag.js?v=22" defer></script>
+  <script src="../home-flower-drag.js?v=2" defer></script>
+  <script src="../home-sakura-rain.js?v=5" defer></script>
+</head>
+<body class="portfolio-page home-narrative">
+<a href="#main" class="skip-link">Skip to main content</a>
+<div class="site-shell">
+<aside class="site-sidebar" aria-label="Primary navigation">
+      <div class="site-sidebar-brand-row">
+<p class="site-sidebar-top">
+        <a href="../index.html" class="site-sidebar-logo-link" aria-label="Janice Yoon · home">
+          <img class="site-sidebar-logo" src="../assets/home-wordmark-janice-yoon.png?v=3" alt="Janice Yoon" width="480" height="329" decoding="async" />
+        </a>
+      </p>
+      <div class="site-sidebar-cursor-cta">
+<div class="site-sidebar-cursor-row" role="group" aria-label="Custom mouse cursor">
+        <button type="button" class="site-sidebar-bubble" aria-pressed="false" aria-label="Bubble cursor · click to turn on or off">
+          <img src="../assets/bubble-cursor.png?v=2" alt="" width="26" height="26" decoding="async" />
+        </button>
+        <button type="button" class="site-sidebar-plumeria" aria-pressed="false" aria-label="Plumeria cursor · click to turn on or off">
+          <img src="../assets/sakura-cursor-sm.png?v=1" alt="" width="18" height="18" decoding="async" />
+        </button>
+        <button type="button" class="site-sidebar-sakura" aria-pressed="false" aria-label="Sakura cursor · click to turn on or off">
+          <img src="../assets/plumeria-cursor.png?v=3" alt="" width="18" height="18" decoding="async" />
+        </button>
+        <button type="button" class="site-sidebar-cherry" aria-pressed="false" aria-label="Cherry cursor · click to turn on or off">
+          <img src="../assets/cherry-cursor.png?v=2" alt="" width="18" height="23" decoding="async" />
+        </button>
+        </div>
+      </div>
+</div>
+<hr class="site-sidebar-hr" />
+      <div class="site-sidebar-byline-block">
+        <p class="site-sidebar-byline">
+          <span class="site-sidebar-byline-line">Multidisciplinary creative</span>
+          <span class="site-sidebar-byline-line">Visual designer</span>
+        </p>
+        </div>
+      <nav class="site-sidebar-nav" aria-label="Site sections">
+        <ul class="site-sidebar-list">
+          <li>
+            <a href="../index.html" class="site-sidebar-link">Homepage</a>
+          </li>
+          <li><a href="../about.html" class="site-sidebar-link site-sidebar-link--primary">About</a></li>
+        </ul>
+        <ul class="site-sidebar-list">
+          <li class="site-sidebar-group">
+            <a href="design.html" class="site-sidebar-sublabel site-sidebar-sublabel--link is-current" aria-current="page" id="lbl-sidebar-design">Design</a>
+            <a href="index.html" class="site-sidebar-sublabel site-sidebar-sublabel--link" id="lbl-sidebar-creatives">Creatives</a>
+            <ul class="site-sidebar-sublist" aria-labelledby="lbl-sidebar-creatives">
+              <li><a href="photography.html" class="site-sidebar-link site-sidebar-link--muted">Photography</a></li>
+              <li><a href="publications.html" class="site-sidebar-link site-sidebar-link--muted">Publications</a></li>
+              <li><a href="videography.html" class="site-sidebar-link site-sidebar-link--muted">Videography</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="site-sidebar-list">
+          <li><a href="flute-series.html" class="site-sidebar-link">Flute series</a></li>
+        </ul>
+        <ul class="site-sidebar-list">
+          <li><a href="../resume.html#contact" class="site-sidebar-link">Contact</a></li>
+          <li><a href="../resume.html#resume" class="site-sidebar-link">Resume</a></li>
+        </ul>
+      </nav>
+    </aside>
+<div class="site-shell-main">
+  <div class="home-sakura-branch" aria-hidden="true">
+    <div class="home-sakura-branch-col">
+      <div class="home-sakura-branch-stage">
+        <img
+          class="home-sakura-branch-img"
+          src="../assets/home-sakura-branch.png?v=4"
+          alt=""
+          width="1024"
+          height="682"
+          decoding="async"
+        />
+      </div>
+      <div class="home-sakura-rain" id="home-sakura-rain" aria-hidden="true"></div>
+    </div>
+  </div>
+  <div class="home-flower-backdrop" aria-hidden="true">
+    <div
+      class="home-flower-slot home-flower-slot--cream"
+      data-flower-drag
+      data-storage-key="jy-home-flower-cream-v1"
+      title="Drag to move"
+    >
+      <div class="home-flower-stage">
+        <div class="home-flower-drift">
+          <div class="home-flower-bloom">
+            <img
+              class="home-flower-img"
+              src="../assets/home-flower-bloom.png?v=1"
+              alt=""
+              width="1024"
+              height="1024"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="home-flower-slot home-flower-slot--poppies"
+      data-flower-drag
+      data-storage-key="jy-home-flower-poppies-v1"
+      title="Drag to move"
+    >
+      <div class="home-flower-stage">
+        <div class="home-flower-drift">
+          <div class="home-flower-bloom">
+            <img
+              class="home-flower-img"
+              src="../assets/home-poppies-bloom.png?v=1"
+              alt=""
+              width="658"
+              height="987"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="work-category-page work-category-page--editorial-hero" id="main">
+    <header class="creatives-landing-hero">
+      <div class="creatives-landing-hero-inner">
+        <h1 class="creatives-landing-title" id="design-landing-heading">
+          <img
+            class="creatives-landing-title-img creatives-landing-title-img--design-dots"
+            src="../assets/design-title-dots.png?v=1"
+            alt="Design"
+            width="1024"
+            height="578"
+            decoding="async"
+          />
+        </h1>
+        <div class="creatives-landing-intro-wrap">
+          <p class="creatives-landing-intro">graphic design · UI/UX · brand design · typography · posters · zine · motion · Adobe InDesign · Adobe Illustrator · Adobe Photoshop · Figma · Cursor · Canva · Adobe Lightroom · Procreate.</p>
+        </div>
+      </div>
+      <hr class="creatives-landing-rule" aria-hidden="true" />
+    </header>
+    <section class="portfolio-grid work-category-grid" aria-labelledby="design-landing-heading">
+      <a class="tile tile--img tile--creatives-overlay" href="../project-40.html" aria-label="Website Design Process · Process &amp; layout · 2026">
+        <span class="tile-stack">
+          <img
+            class="tile-img"
+            src="../assets/personal-portfolio-tile.png?v=1"
+            alt=""
+            width="1200"
+            height="674"
+            loading="lazy"
+          />
+          <span class="tile-caption tile-caption--creatives-overlay">
+            <span class="tile-caption-title">Website Design Process</span>
+            <span class="tile-caption-medium">Process &amp; layout</span>
+            <span class="tile-caption-date">2026</span>
+          </span>
+        </span>
+      </a>
+      <a class="tile tile--img tile--creatives-overlay" href="../project-skinmap.html" aria-label="SKINMAP · promotional hero · 2026">
+        <span class="tile-stack">
+          <img class="tile-img" src="../assets/skinmap-hero.png" alt="" loading="lazy" />
+          <span class="tile-caption tile-caption--creatives-overlay">
+            <span class="tile-caption-title">SKINMAP</span>
+            <span class="tile-caption-medium">web</span>
+            <span class="tile-caption-date">2026</span>
+          </span>
+        </span>
+      </a>
+      <a
+        class="tile tile--img tile--creatives-overlay tile--hover-video-preview"
+        href="../project-37.html"
+        aria-label="Archive of Us Zine · print · 2026"
+      >
+        <span class="tile-stack">
+          <video
+            class="tile-video tile-video--hover-preview"
+            src="../assets/archive-of-us-zine-motion.mov?v=1"
+            muted
+            loop
+            playsinline
+            preload="none"
+            poster="../assets/archive-of-us-zine-cover-design.jpg?v=1"
+            aria-hidden="true"
+          ></video>
+          <img
+            class="tile-img"
+            src="../assets/archive-of-us-zine-cover-design.jpg?v=1"
+            alt=""
+            width="673"
+            height="1024"
+            loading="lazy"
+          />
+          <span class="tile-caption tile-caption--creatives-overlay">
+            <span class="tile-caption-title">Archive of Us Zine</span>
+            <span class="tile-caption-medium">zine</span>
+            <span class="tile-caption-date">2026</span>
+          </span>
+        </span>
+      </a>
+      <a class="tile tile--img tile--creatives-overlay" href="../project-39.html" aria-label="Brand Experience Design: Interstellar · slide highlights and scrollable presentation · 2026">
+        <span class="tile-stack">
+          <img class="tile-img" src="../assets/interstellar-brand-experience-design-cover.png?v=1" alt="" loading="lazy" />
+          <span class="tile-caption tile-caption--creatives-overlay">
+            <span class="tile-caption-title">Brand Experience Design: Interstellar</span>
+            <span class="tile-caption-medium">Photoshop · Illustrator · Procreate</span>
+            <span class="tile-caption-date">2026</span>
+          </span>
+        </span>
+      </a>
+      <a class="tile tile--img tile--creatives-overlay" href="../project-22.html" aria-label="KILL BILL Vol. 1: movie poster · 2026">
+        <span class="tile-stack">
+          <img class="tile-img" src="../assets/project-22-hero.png" alt="" loading="lazy" />
+          <span class="tile-caption tile-caption--creatives-overlay">
+            <span class="tile-caption-title">KILL BILL Vol. 1: movie poster</span>
+            <span class="tile-caption-medium">graphics</span>
+            <span class="tile-caption-date">2026</span>
+          </span>
+        </span>
+      </a>
+      <a class="tile tile--img tile--creatives-overlay tile--7oh-hover-cycle" href="../project-45.html" aria-label="7 of Hearts · graphics · 2026">
+        <span class="tile-stack tile-stack--7oh-hover">
+          <img
+            class="tile-img"
+            src="../assets/redesigncards-2-cover.png?v=3"
+            alt=""
+            loading="lazy"
+            decoding="async"
+          />
+          <img
+            class="tile-img"
+            src="../assets/project-45-7-of-hearts.png"
+            alt=""
+            loading="lazy"
+            decoding="async"
+            aria-hidden="true"
+          />
+          <img
+            class="tile-img"
+            src="../assets/redesigncards-cover.png"
+            alt=""
+            loading="lazy"
+            decoding="async"
+            aria-hidden="true"
+          />
+          <span class="tile-caption tile-caption--creatives-overlay">
+            <span class="tile-caption-title">7 of Hearts</span>
+            <span class="tile-caption-medium">graphics</span>
+            <span class="tile-caption-date">2026</span>
+          </span>
+        </span>
+      </a>
+      <a class="tile tile--img tile--creatives-overlay" href="../project-46.html" aria-label="IML 230: Portfolio Reflection | Spring 2026 · slides · 2026">
+        <span class="tile-stack">
+          <img
+            class="tile-img"
+            src="../assets/yoon-iml-final-indesign-cover.png?v=1"
+            alt=""
+            width="1854"
+            height="2400"
+            loading="lazy"
+            decoding="async"
+          />
+          <span class="tile-caption tile-caption--creatives-overlay">
+            <span class="tile-caption-title">IML 230: Portfolio Reflection | Spring 2026</span>
+            <span class="tile-caption-medium">slides</span>
+            <span class="tile-caption-date">2026</span>
+          </span>
+        </span>
+      </a>
+      <a class="tile tile--img tile--creatives-overlay" href="../project-41.html" aria-label="Business card: logo designs · 2026">
+        <span class="tile-stack">
+          <img class="tile-img" src="../assets/logodesigns-JY-preview.png" alt="" loading="lazy" />
+          <span class="tile-caption tile-caption--creatives-overlay">
+            <span class="tile-caption-title">Business card: logo designs</span>
+            <span class="tile-caption-medium">branding</span>
+            <span class="tile-caption-date">2026</span>
+          </span>
+        </span>
+      </a>
+      <a class="tile tile--img tile--creatives-overlay" href="../project-44.html" aria-label="Presence and Absence · design booklet · 2026">
+        <span class="tile-stack">
+          <img
+            class="tile-img"
+            src="../assets/presence-absence-2026-01.png?v=1"
+            alt=""
+            width="972"
+            height="1620"
+            loading="lazy"
+            decoding="async"
+          />
+          <span class="tile-caption tile-caption--creatives-overlay">
+            <span class="tile-caption-title">Presence and Absence</span>
+            <span class="tile-caption-medium">booklet</span>
+            <span class="tile-caption-date">2026</span>
+          </span>
+        </span>
+      </a>
+      <a class="tile tile--img tile--creatives-overlay tile--img-contain" href="../project-43.html" aria-label="Oceana · business card, envelope, website · 2019">
+        <span class="tile-stack">
+          <img class="tile-img" src="../assets/project-43-cover.jpg?v=3" alt="" width="1024" height="583" loading="lazy" decoding="async" />
+          <span class="tile-caption tile-caption--creatives-overlay">
+            <span class="tile-caption-title">Oceana</span>
+            <span class="tile-caption-medium">Branding: Business Card design, Envelope Design, Website design</span>
+            <span class="tile-caption-date">2019</span>
+          </span>
+        </span>
+      </a>
+      <a class="tile tile--img tile--creatives-overlay" href="../project-42.html" aria-label="Lyc bottle cap cleaner · brand design · scrollable slides · 2026">
+        <span class="tile-stack">
+          <img
+            class="tile-img"
+            src="../assets/gray-green-portfolio-cover.jpg?v=2"
+            alt=""
+            width="1024"
+            height="793"
+            loading="lazy"
+          />
+          <span class="tile-caption tile-caption--creatives-overlay">
+            <span class="tile-caption-title">Lyc: bottle cap cleaner</span>
+            <span class="tile-caption-medium">Brand Design</span>
+            <span class="tile-caption-date">2026</span>
+          </span>
+        </span>
+      </a>
+      <a class="tile tile--img tile--video tile--creatives-overlay" href="../project-5.html" aria-label="City in hands · 2023">
+        <span class="tile-stack">
+          <video class="tile-video" src="../assets/city-hands.mp4" muted loop playsinline autoplay preload="metadata" poster="../assets/work-city-hands.png" aria-hidden="true"></video>
+          <span class="tile-caption tile-caption--creatives-overlay">
+            <span class="tile-caption-title">City in hands</span>
+            <span class="tile-caption-medium">motion graphics</span>
+            <span class="tile-caption-date">2023</span>
+          </span>
+        </span>
+      </a>
+      <a class="tile tile--img tile--video tile--creatives-overlay" href="../project-8.html" aria-label="Uncovering Consciousness · 2023">
+        <span class="tile-stack">
+          <video class="tile-video" src="../assets/project-8-hero.mp4" muted loop playsinline autoplay preload="metadata" aria-hidden="true"></video>
+          <span class="tile-caption tile-caption--creatives-overlay">
+            <span class="tile-caption-title">Uncovering Consciousness</span>
+            <span class="tile-caption-medium">motion graphics</span>
+            <span class="tile-caption-date">2023</span>
+          </span>
+        </span>
+      </a>
+      <a class="tile tile--img tile--video tile--creatives-overlay" href="../project-10.html" aria-label="Fixating · 2023">
+        <span class="tile-stack">
+          <video class="tile-video" src="../assets/project-10-face.mp4" muted loop playsinline autoplay preload="metadata" poster="../assets/project-10-illustration.png" aria-hidden="true"></video>
+          <span class="tile-caption tile-caption--creatives-overlay">
+            <span class="tile-caption-title">Fixating</span>
+            <span class="tile-caption-medium">motion graphics</span>
+            <span class="tile-caption-date">2023</span>
+          </span>
+        </span>
+      </a>
+      <a class="tile tile--img tile--video tile--creatives-overlay" href="../project-12.html" aria-label="They Follow · 2023">
+        <span class="tile-stack">
+          <video class="tile-video" src="../assets/project-12-hero.mp4" muted loop playsinline autoplay preload="metadata" aria-hidden="true"></video>
+          <span class="tile-caption tile-caption--creatives-overlay">
+            <span class="tile-caption-title">They Follow</span>
+            <span class="tile-caption-medium">motion graphics</span>
+            <span class="tile-caption-date">2023</span>
+          </span>
+        </span>
+      </a>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <p class="site-footer-credit">
+      <a href="../index.html" class="site-footer-logo-link" aria-label="Janice Yoon · home">
+        <img class="site-footer-logo" src="../assets/home-wordmark-janice-yoon.png?v=3" alt="" width="480" height="329" decoding="async" />
+      </a>
+    </p>
+  </footer>
+  <script src="../tile-hover-preview-video.js?v=1" defer></script>
+</div>
+</div>
+<div
+  class="home-bubble-float home-bubble-float--large"
+  id="jy-home-bubble"
+  role="img"
+  aria-label="Soap bubble · drag to move; double-tap or double-click to pop"
+  data-storage-key="jy-home-bubble-xy-v2"
+  data-default-x="0"
+  data-default-y="0"
+>
+  <div class="home-bubble-float-bob">
+    <img
+      class="home-bubble-float-img"
+      src="../assets/home-bubble-float.png?v=2"
+      alt=""
+      width="200"
+      height="198"
+      decoding="async"
+      draggable="false"
+    />
+  </div>
+</div>
+<div
+  class="home-bubble-float home-bubble-float--pearlescent"
+  id="jy-home-bubble-b"
+  role="img"
+  aria-label="Iridescent soap bubble · drag to move; double-tap or double-click to pop"
+  data-storage-key="jy-home-bubble-xy-b-v2"
+  data-default-x="95"
+  data-default-y="-55"
+>
+  <div class="home-bubble-float-bob">
+    <img
+      class="home-bubble-float-img"
+      src="../assets/home-bubble-float-b.png?v=2"
+      alt=""
+      width="200"
+      height="198"
+      decoding="async"
+      draggable="false"
+    />
+  </div>
+</div>
+<div
+  class="home-bubble-float home-bubble-float--mini"
+  id="jy-home-bubble-c"
+  role="img"
+  aria-label="Small iridescent bubble · drag to move; double-tap or double-click to pop"
+  data-storage-key="jy-home-bubble-xy-c-v2"
+  data-default-x="-72"
+  data-default-y="58"
+>
+  <div class="home-bubble-float-bob">
+    <img
+      class="home-bubble-float-img"
+      src="../assets/home-bubble-float-b.png?v=2"
+      alt=""
+      width="200"
+      height="198"
+      decoding="async"
+      draggable="false"
+    />
+  </div>
+</div>
+<div
+  class="home-bubble-float home-bubble-float--photo"
+  id="jy-home-bubble-photo"
+  role="img"
+  aria-label="Small soap bubble photo · drag to move; double-tap or double-click to pop"
+  data-storage-key="jy-home-bubble-xy-photo-v2"
+  data-default-x="62"
+  data-default-y="44"
+>
+  <div class="home-bubble-float-bob">
+    <img
+      class="home-bubble-float-img"
+      src="../assets/home-bubble-float-photo.png"
+      alt=""
+      width="200"
+      height="198"
+      decoding="async"
+      draggable="false"
+    />
+  </div>
+</div>
+<div
+  class="home-bubble-float home-bubble-float--soap"
+  id="jy-home-bubble-soap"
+  role="img"
+  aria-label="Realistic soap bubble · drag to move; double-tap or double-click to pop"
+  data-storage-key="jy-home-bubble-xy-soap-v1"
+  data-default-x="-38"
+  data-default-y="-28"
+>
+  <div class="home-bubble-float-bob">
+    <img
+      class="home-bubble-float-img"
+      src="../assets/home-bubble-float-soap.png?v=1"
+      alt=""
+      width="736"
+      height="736"
+      decoding="async"
+      draggable="false"
+    />
+  </div>
+</div>
+</body>
+</html>
