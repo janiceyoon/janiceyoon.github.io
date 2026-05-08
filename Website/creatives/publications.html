@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -196,8 +197,10 @@
           <video
             id="canned-heat-publications-tile-video"
             class="tile-video"
-            src="../assets/canned-heat-mm.mp4"
+            src="../assets/canned-heat-cover.mp4?v=1"
+            poster="../assets/canned-heat-poster.jpg?v=3"
             muted
+            loop
             playsinline
             autoplay
             preload="auto"
@@ -256,7 +259,7 @@
 (function () {
   var v = document.getElementById("canned-heat-publications-tile-video");
   if (!v) return;
-  var CLIP_START = 54;
+  var CLIP_START = 0;
   var END_EPS = 0.12;
   var clipReady = false;
   v.muted = true;

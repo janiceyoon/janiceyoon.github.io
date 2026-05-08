@@ -1,0 +1,26 @@
+# macOS
+.DS_Store
+**/.DS_Store
+._*
+
+# Editor / IDE
+.vscode/
+.idea/
+
+# Backup / source media not used by the live site
+assets/_orig_videos/
+assets/canned-heat-mm.mov
+assets/canned-heat-mm.mp4
+assets/archives-of-us-mockup.pdf
+assets/killbill-iphone-16-mockup.pdf
+
+# Single live-site PDF that exceeds GitHub's 100MB-per-file limit.
+# Compress it with Preview (File > Export > Quartz Filter > Reduce File Size)
+# to bring it under 100MB, then remove this line and re-commit.
+assets/archivesofus-203.pdf
+
+# Common backup artifacts
+*.bak
+*.tmp
+*~
+.pydeps/*
