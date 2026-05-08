@@ -166,26 +166,23 @@
     <section class="project-media project-media--oceana-stack" aria-label="Project media">
       <div class="project-oceana-stack">
         <figure class="project-oceana-stack__item">
-          <video controls playsinline src="assets/project-20-hero.mp4" aria-label="Project media"></video>
-        </figure>
-        <figure class="project-oceana-stack__item">
-          <a
-            href="https://youtu.be/EHXBaDV5nGs"
-            class="project-youtube-link"
-            style="display:block;max-width:min(960px,100%);margin-inline:auto;text-decoration:none;color:inherit;"
-            aria-label="Watch Joseph's doodles documentation on YouTube"
+          <div
+            class="project-youtube-embed"
+            style="position:relative;width:100%;max-width:min(960px,100%);aspect-ratio:16/9;margin-inline:auto;background:#000;"
           >
-            <img
-              src="https://i.ytimg.com/vi/EHXBaDV5nGs/hqdefault.jpg"
-              alt="Joseph's doodles — video thumbnail"
+            <iframe
+              src="https://www.youtube.com/embed/EHXBaDV5nGs?rel=0&modestbranding=1&iv_load_policy=3"
+              title="Joseph's doodles · installation documentation"
               loading="lazy"
-              decoding="async"
-              style="width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;display:block;border-radius:12px;"
-            />
-            <figcaption class="project-youtube-short__caption" style="margin-top:10px;font-size:0.85rem;opacity:0.7;text-align:center;">
-              Installation documentation · Watch on YouTube →
-            </figcaption>
-          </a>
+              style="position:absolute;inset:0;width:100%;height:100%;border:0;"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <figcaption class="project-youtube-short__caption" style="margin-top:10px;font-size:0.85rem;opacity:0.7;text-align:center;">
+            Installation documentation · <a href="https://youtu.be/EHXBaDV5nGs">Open on YouTube</a>
+          </figcaption>
         </figure>
       </div>
     </section>
