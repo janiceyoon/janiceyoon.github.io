@@ -170,13 +170,15 @@
       <div class="videography-hero-media">
         <div class="videography-hero-frame">
           <video
+            id="canned-heat-work-cover-video"
             class="videography-hero-video"
             src="../assets/canned-heat-cover.mp4?v=1"
             muted
             loop
             playsinline
             autoplay
-            preload="metadata"
+            preload="auto"
+            poster="../assets/canned-heat-poster.jpg?v=3"
             aria-label="Canned Heat · cover clip"
           ></video>
         </div>
@@ -235,9 +237,26 @@
   var v = document.getElementById("canned-heat-work-cover-video");
   if (v) {
     var START = 54;
+    function playHero() {
+      v.play().catch(function () {});
+    }
     v.addEventListener("loadedmetadata", function () {
       if (v.duration && !isNaN(v.duration) && v.duration > START) {
-        v.currentTime = START;
+        v.addEventListener(
+          "seeked",
+          function onSeeked() {
+            v.removeEventListener("seeked", onSeeked);
+            playHero();
+          },
+          { once: true }
+        );
+        try {
+          v.currentTime = START;
+        } catch (e) {
+          playHero();
+        }
+      } else {
+        playHero();
       }
     });
   }

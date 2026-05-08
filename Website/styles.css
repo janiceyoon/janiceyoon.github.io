@@ -7870,6 +7870,17 @@ html[data-cursor] a.project-exit {
   object-fit: cover;
 }
 
+/* Cover clip fills the same 16:9 hero frame as the YouTube iframe variant */
+.videography-hero-frame .videography-hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  object-fit: cover;
+}
+
 /* YouTube embed variant of the videography hero — wrapper enforces the 16:9 box
    (more reliable than aspect-ratio directly on a replaced <iframe>) and the iframe
    fills it absolutely so the YouTube player sits unobstructed at the bottom. */
