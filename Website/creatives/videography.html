@@ -176,6 +176,7 @@
             muted
             loop
             playsinline
+            webkit-playsinline=""
             autoplay
             preload="auto"
             poster="../assets/canned-heat-poster.jpg?v=3"
@@ -237,28 +238,90 @@
   var v = document.getElementById("canned-heat-work-cover-video");
   if (v) {
     var START = 54;
-    function playHero() {
-      v.play().catch(function () {});
+    var seekFallbackTimer;
+
+    function ensureMuted() {
+      v.muted = true;
+      v.defaultMuted = true;
+      v.setAttribute("muted", "");
+      v.playsInline = true;
     }
+
+    function playHero() {
+      ensureMuted();
+      var p = v.play();
+      if (p && typeof p.catch === "function") {
+        p.catch(function () {});
+      }
+    }
+
+    function finishSeekAndPlay() {
+      if (seekFallbackTimer) {
+        clearTimeout(seekFallbackTimer);
+        seekFallbackTimer = null;
+      }
+      playHero();
+    }
+
     v.addEventListener("loadedmetadata", function () {
+      ensureMuted();
       if (v.duration && !isNaN(v.duration) && v.duration > START) {
-        v.addEventListener(
-          "seeked",
-          function onSeeked() {
-            v.removeEventListener("seeked", onSeeked);
-            playHero();
-          },
-          { once: true }
-        );
+        var seekDone = false;
+        function onSeekedOnce() {
+          if (seekDone) return;
+          seekDone = true;
+          finishSeekAndPlay();
+        }
+        v.addEventListener("seeked", onSeekedOnce, { once: true });
+        seekFallbackTimer = setTimeout(onSeekedOnce, 900);
         try {
           v.currentTime = START;
         } catch (e) {
-          playHero();
+          onSeekedOnce();
         }
       } else {
         playHero();
       }
     });
+
+    v.addEventListener(
+      "canplay",
+      function () {
+        if (v.paused) playHero();
+      },
+      { once: true }
+    );
+
+    var heroArticle = document.getElementById("canned-heat");
+    if (heroArticle && typeof IntersectionObserver !== "undefined") {
+      var io = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) playHero();
+          });
+        },
+        { root: null, rootMargin: "80px 0px", threshold: 0.08 }
+      );
+      io.observe(heroArticle);
+    }
+
+    document.addEventListener(
+      "visibilitychange",
+      function () {
+        if (!document.hidden && v.paused) playHero();
+      },
+      { passive: true }
+    );
+
+    function unlockOnce() {
+      playHero();
+      document.removeEventListener("pointerdown", unlockOnce);
+      document.removeEventListener("touchstart", unlockOnce);
+    }
+    document.addEventListener("pointerdown", unlockOnce, { passive: true });
+    document.addEventListener("touchstart", unlockOnce, { passive: true });
+
+    playHero();
   }
   var filters = document.querySelectorAll(".videography-filter[data-filter]");
   var pieces = document.querySelectorAll(".videography-piece[data-category]");
