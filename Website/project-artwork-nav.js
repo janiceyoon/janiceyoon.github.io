@@ -60,7 +60,6 @@
       "project-40.html",
       "project-skinmap.html",
       "project-37.html",
-      "project-46.html",
       "project-42.html",
       "project-22.html",
       "project-39.html",

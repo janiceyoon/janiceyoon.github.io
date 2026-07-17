@@ -5496,7 +5496,7 @@ body.portfolio-page:has(main:not(.home-narrative-main)) .site-sidebar-group > .s
   margin-top: clamp(40px, 6vw, 72px);
   margin-inline: auto;
   width: 100%;
-  max-width: 720px;
+  max-width: min(960px, 100%);
 }
 
 /* Hug photo + copy together, centered — readable space between image and description */
@@ -5527,8 +5527,8 @@ body.portfolio-page:has(main:not(.home-narrative-main)) .site-sidebar-group > .s
 
 .about-split-photo {
   margin: 0;
-  flex: 0 1 min(200px, 26vw);
-  max-width: 220px;
+  flex: 0 1 min(400px, 48vw);
+  max-width: min(440px, 52vw);
 }
 
 @keyframes about-split-photo-fade-in {
@@ -5739,7 +5739,8 @@ body.portfolio-page:has(main:not(.home-narrative-main)) .site-sidebar-group > .s
 
   .about-split-photo {
     flex-basis: auto;
-    width: min(100%, 220px);
+    width: min(100%, min(440px, 92vw));
+    max-width: min(440px, 92vw);
   }
 }
 
@@ -7871,7 +7872,8 @@ html[data-cursor] a.project-exit {
 }
 
 /* Cover clip fills the same 16:9 hero frame as the YouTube iframe variant */
-.videography-hero-frame .videography-hero-video {
+.videography-hero-frame .videography-hero-video,
+.videography-hero-frame-cover .videography-hero-video {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -7879,6 +7881,51 @@ html[data-cursor] a.project-exit {
   max-height: none;
   margin: 0;
   object-fit: cover;
+}
+
+/* Canned Heat — cover video + Instagram reel embed (see videography.html) */
+#canned-heat .videography-hero-frame--combo {
+  aspect-ratio: auto;
+  max-height: none;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  background: #0a0a0a;
+}
+
+#canned-heat .videography-hero-frame-cover {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: min(82vh, 960px);
+  overflow: hidden;
+  margin-inline: auto;
+  background: #000;
+}
+
+#canned-heat .videography-hero-instagram {
+  width: 100%;
+  max-width: 540px;
+  margin: clamp(14px, 2.5vw, 22px) auto 0;
+  padding: 0 clamp(12px, 3vw, 24px);
+  box-sizing: border-box;
+}
+
+#canned-heat .videography-hero-instagram .instagram-media {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Canned Heat hero — click / tap to play or pause (cover clip only) */
+#canned-heat .videography-hero-frame-cover.videography-hero-frame--tap-play {
+  cursor: pointer;
+}
+
+#canned-heat .videography-hero-frame-cover.videography-hero-frame--tap-play:focus-visible {
+  outline: 2px solid var(--link-interact-pink, #e91e8c);
+  outline-offset: 4px;
 }
 
 /* YouTube embed variant of the videography hero — wrapper enforces the 16:9 box

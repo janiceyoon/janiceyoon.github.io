@@ -6,7 +6,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Videography · JANICE YOON</title>
-  <link rel="stylesheet" href="../styles.css?v=353" />
+  <link rel="stylesheet" href="../styles.css?v=354" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -168,20 +168,42 @@
 
     <article class="videography-piece videography-piece--hero" id="canned-heat" data-category="choreography" aria-label="Canned Heat · NSQK choreography music video · 2025">
       <div class="videography-hero-media">
-        <div class="videography-hero-frame">
-          <video
-            id="canned-heat-work-cover-video"
-            class="videography-hero-video"
-            src="../assets/canned-heat-cover.mp4?v=1"
-            muted
-            loop
-            playsinline
-            webkit-playsinline=""
-            autoplay
-            preload="auto"
-            poster="../assets/canned-heat-poster.jpg?v=3"
-            aria-label="Canned Heat · cover clip"
-          ></video>
+        <div class="videography-hero-frame videography-hero-frame--combo">
+          <div
+            class="videography-hero-frame-cover videography-hero-frame--tap-play"
+            tabindex="0"
+            role="group"
+            aria-label="Canned Heat video · click or press Enter to play or pause"
+          >
+            <video
+              id="canned-heat-work-cover-video"
+              class="videography-hero-video"
+              src="../assets/canned-heat-cover.mp4?v=1"
+              muted
+              loop
+              playsinline
+              webkit-playsinline=""
+              autoplay
+              preload="auto"
+              poster="../assets/canned-heat-poster.jpg?v=3"
+              aria-label="Canned Heat · cover clip"
+            ></video>
+          </div>
+          <div class="videography-hero-instagram">
+            <blockquote
+              class="instagram-media"
+              data-instgrm-permalink="https://www.instagram.com/reel/DTV1Pv_CVBl/?utm_source=ig_web_copy_link"
+              data-instgrm-version="14"
+              style="background: #fff; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5), 0 1px 10px 0 rgba(0, 0, 0, 0.15); margin: 0 auto; max-width: 540px; min-width: 280px; padding: 0; width: 100%"
+            >
+              <a
+                href="https://www.instagram.com/reel/DTV1Pv_CVBl/?utm_source=ig_web_copy_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="color: #000; font-family: Arial, sans-serif; font-size: 14px; font-style: normal; font-weight: 550; line-height: 18px; text-decoration: none;"
+                >Canned Heat · view on Instagram</a>
+            </blockquote>
+          </div>
         </div>
         <div class="videography-hero-overlay videography-hero-overlay--top">
           <div class="videography-hero-copy">
@@ -313,6 +335,33 @@
       { passive: true }
     );
 
+    var heroFrame = document.querySelector("#canned-heat .videography-hero-frame-cover.videography-hero-frame--tap-play");
+    if (heroFrame) {
+      function togglePlayFromUser() {
+        if (v.paused) {
+          v.muted = false;
+          var p = v.play();
+          if (p && typeof p.catch === "function") {
+            p.catch(function () {
+              ensureMuted();
+              playHero();
+            });
+          }
+        } else {
+          v.pause();
+        }
+      }
+      heroFrame.addEventListener("click", function (e) {
+        if (e.target.closest && e.target.closest("a.videography-open-btn")) return;
+        togglePlayFromUser();
+      });
+      heroFrame.addEventListener("keydown", function (e) {
+        if (e.key !== "Enter" && e.key !== " ") return;
+        e.preventDefault();
+        togglePlayFromUser();
+      });
+    }
+
     function unlockOnce() {
       playHero();
       document.removeEventListener("pointerdown", unlockOnce);
@@ -342,6 +391,7 @@
   });
 })();
 </script>
+<script async src="https://www.instagram.com/embed.js"></script>
 <div
   class="home-bubble-float home-bubble-float--large"
   id="jy-home-bubble"
